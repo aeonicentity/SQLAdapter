@@ -111,9 +111,9 @@ class MySqlAdapter:
     def searchAndSelect(self,table,args):
         #this function searches the database for all ids matching description, then selects them.
         results = []
-        ids = search(table,args)
+        ids = self.search(table,args)
         for id in ids:
-            results.append(selectId(table,id))
+            results.append(self.selectId(table,id))
         return results
 
     def selectAll(self,table):
